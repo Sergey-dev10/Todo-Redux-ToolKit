@@ -1,9 +1,11 @@
 import React from 'react';
 import { Title } from '../Title';
-import { TaskListWrapper } from './TodoList.styled';
+import { TaskAddition } from '../TaskAddition';
+import { TaskListWrapper } from './TodoList.style';
 
 export const TodoList = () => (
   <TaskListWrapper>
     <Title />
+    <TaskAddition />
   </TaskListWrapper>
 );
