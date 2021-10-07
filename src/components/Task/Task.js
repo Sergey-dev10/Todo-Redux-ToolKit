@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { compliteTask } from '../../actions/actions';
 import {
   TaskWrapper,
   TextWrapper,
@@ -9,12 +11,25 @@ import {
 
 export const Task = ({
   id, isComplited, text,
-}) => (
-  <TaskWrapper>
-    <TextWrapper complition={isComplited}>{text}</TextWrapper>
-    <ButtonsWrapper>
-      <ButtonComplite type="button">Complite</ButtonComplite>
-      <ButtonRemove type="button">Remove</ButtonRemove>
-    </ButtonsWrapper>
-  </TaskWrapper>
-);
+}) => {
+  const dispatch = useDispatch();
+  const onComplite = (event) => {
+    const taskId = event.target.id;
+    dispatch(compliteTask(taskId));
+  };
+  return (
+    <TaskWrapper>
+      <TextWrapper complition={isComplited}>{text}</TextWrapper>
+      <ButtonsWrapper>
+        <ButtonComplite
+          id={id}
+          type="button"
+          onClick={onComplite}
+        >
+          Complite
+        </ButtonComplite>
+        <ButtonRemove type="button">Remove</ButtonRemove>
+      </ButtonsWrapper>
+    </TaskWrapper>
+  );
+};

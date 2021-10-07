@@ -4,7 +4,7 @@ const initialState = {
   todo: [],
 };
 
-const { ADD_TASK } = actionTypes;
+const { ADD_TASK, COMPLITE_TASK, REMOVE_TASK } = actionTypes;
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
@@ -12,6 +12,12 @@ export const todoReducer = (state = initialState, action) => {
         ...state,
         todo:
         [...state.todo, { id: action.payload.id, isComplited: false, text: action.payload.text }],
+      };
+    case COMPLITE_TASK:
+      return {
+        ...state,
+        todo: [...state.todo.map((task) => (task.id === action.payload
+          ? { ...task, isComplited: !task.isComplited } : task))],
       };
     default:
       return state;
