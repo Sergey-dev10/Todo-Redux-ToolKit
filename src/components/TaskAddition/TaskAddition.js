@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { TaskAdditionWrapper, InputAddField, InputSubmit } from './TaskAddition.style';
+import { TaskAdditionWrapper, InputAddField, InputSubmit } from './TaskAddition.styles';
 import { addTask } from '../../actions/actions';
 
 export const TaskAddition = () => {
