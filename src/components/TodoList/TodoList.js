@@ -11,7 +11,14 @@ export const TodoList = () => {
     <TaskListWrapper>
       <Title />
       <TaskAddition />
-      {tasks.map((task) => (<Task id={task.id} isComplited={task.isComplited} text={task.text} />))}
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          id={task.id}
+          isComplited={task.isComplited}
+          text={task.text}
+        />
+      ))}
     </TaskListWrapper>
   );
 };

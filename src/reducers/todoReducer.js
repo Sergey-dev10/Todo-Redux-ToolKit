@@ -19,6 +19,10 @@ export const todoReducer = (state = initialState, action) => {
         todo: [...state.todo.map((task) => (task.id === action.payload
           ? { ...task, isComplited: !task.isComplited } : task))],
       };
+    case REMOVE_TASK:
+      return {
+        ...state, todo: [...state.todo.filter(((task) => task.id !== action.payload))],
+      };
     default:
       return state;
   }

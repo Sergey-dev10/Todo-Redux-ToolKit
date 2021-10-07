@@ -9,7 +9,7 @@ export const TaskAddition = () => {
   const tasks = useSelector((state) => state.todo);
   const [inPutValue, setInputValue] = useState('');
   const onChangeInput = (event) => {
-    const value = event.target.value.trim();
+    const { value } = event.target;
     setInputValue(value);
   };
   const onAddTask = (event) => {
