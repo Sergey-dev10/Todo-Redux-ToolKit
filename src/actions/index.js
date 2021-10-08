@@ -1,7 +1,7 @@
 import { actionTypes } from './actionTypes';
 
 const {
-  ADD_TASK, COMPLITE_TASK, REMOVE_TASK, SET_FILTER,
+  ADD_TASK, COMPLITE_TASK, REMOVE_TASK, SET_FILTER, SEARCH_TASK,
 } = actionTypes;
 
 export const addTask = (task) => ({
@@ -32,4 +32,9 @@ export const showActive = () => ({
 export const showADone = () => ({
   type: SET_FILTER,
   payload: 'SHOW_DONE',
+});
+
+export const searchTask = (text) => ({
+  type: SEARCH_TASK,
+  payload: text,
 });

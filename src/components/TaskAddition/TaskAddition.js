@@ -6,7 +6,7 @@ import { addTask } from '../../actions';
 
 export const TaskAddition = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector((state) => state.todo);
+  const tasks = useSelector(({ todo }) => todo);
   const [inPutValue, setInputValue] = useState('');
   const onChangeInput = (event) => {
     const { value } = event.target;

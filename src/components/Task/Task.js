@@ -25,7 +25,6 @@ export const Task = ({
       <TextWrapper complition={isComplited}>{text}</TextWrapper>
       <ButtonsWrapper>
         <ButtonComplite
-          id={id}
           type="button"
           onClick={onComplite}
         >

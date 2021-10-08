@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Title } from '../Title';
 import { TaskAddition } from '../TaskAddition';
-import { TaskListWrapper } from './TaskList.styles';
+import { TaskListWrapper, SearchFilterWrapper } from './TaskList.styles';
 import { Task } from '../Task';
 import { TasksFilter } from '../TasksFilter';
+import { TaskSearch } from '../TaskSearch';
 
 export const TaskList = () => {
   let tasks = useSelector(({ todo }) => todo.todo);
   const currentFilter = useSelector(({ filterType }) => filterType.filterType);
+  const searchedText = useSelector(({ search }) => search.text);
+
   if (currentFilter === 'SHOW_ACTIVE') {
     tasks = tasks.filter((task) => task.isComplited === false);
   } else if (currentFilter === 'SHOW_DONE') {
     tasks = tasks.filter((task) => task.isComplited === true);
+  }
+  if (searchedText) {
+    tasks = tasks.filter((task) => task.text.includes(searchedText));
   }
 
   return (
@@ -27,7 +33,10 @@ export const TaskList = () => {
           text={task.text}
         />
       ))}
-      <TasksFilter tasks={tasks} />
+      <SearchFilterWrapper>
+        <TaskSearch />
+        <TasksFilter tasks={tasks} />
+      </SearchFilterWrapper>
     </TaskListWrapper>
   );
 };
