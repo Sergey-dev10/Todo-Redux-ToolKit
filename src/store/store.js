@@ -1,9 +1,9 @@
 import { createStore } from 'redux';
-import { todoReducer } from '../reducers/todoReducer';
+import { rootReducer } from '../reducers';
 
 /* eslint-disable no-underscore-dangle */
 export const store = createStore(
-  todoReducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 /* eslint-enable */

@@ -4,7 +4,11 @@ const initialState = {
   todo: [],
 };
 
-const { ADD_TASK, COMPLITE_TASK, REMOVE_TASK } = actionTypes;
+const {
+  ADD_TASK,
+  COMPLITE_TASK,
+  REMOVE_TASK,
+} = actionTypes;
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
