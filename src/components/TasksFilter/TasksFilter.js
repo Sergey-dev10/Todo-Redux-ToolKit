@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { showAll, showActive, showADone } from '../../actions';
+import { showAll, showActive, showADone } from '../../reducers/filterSlice';
 import {
   TaskFilterWrapper, ButtonAll, ButtonActive, ButtonDone,
 } from './TasksFilter.styles';

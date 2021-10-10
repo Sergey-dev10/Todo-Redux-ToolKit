@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -13,18 +14,16 @@ const todoSlice = createSlice({
     },
     compliteTask(state, action) {
       const id = action.payload;
-      // eslint-disable-next-line no-param-reassign
       state.todo = state.todo.map((task) => (task.id === action.payload
         ? { ...task, isComplited: !task.isComplited } : task));
     },
     removeTask(state, action) {
       const id = action.payload;
-      // eslint-disable-next-line no-param-reassign
       state.todo = state.todo.filter((task) => task.id !== id);
     },
   },
 });
 
 export const { addTask, compliteTask, removeTask } = todoSlice.actions;
-export const selectTodo = (state) => state.todo.todo;
+export const selectTodo = ({ todo }) => todo.todo;
 export default todoSlice.reducer;
