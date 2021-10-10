@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { InputSearch } from './TaskSearch.styles';
-import { searchTask } from '../../actions';
+import { searchTask } from '../../reducers/searchSlice';
 
 export const TaskSearch = () => {
   const despatch = useDispatch();

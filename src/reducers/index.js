@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import todoReducer from './todoSlice';
 import filterReducer from './filterSlice';
-import { searchReducer } from './searchReducer';
+import searchReducer from './searchSlice';
 
 export const rootReducer = combineReducers({
   todo: todoReducer,
