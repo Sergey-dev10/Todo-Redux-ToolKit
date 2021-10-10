@@ -26,8 +26,14 @@ export const ButtonsWrapper = styled.div`
     @media ${device.mobileL} { 
         width: 33%;
     }
+    @media ${device.laptop} { 
+        width: 30%;
+    }
+    @media ${device.desktop} { 
+        width: 25%;
+    }
     @media ${device.desktopL} { 
-        width: 22%;
+        width: 20%;
     }
 `;
 
