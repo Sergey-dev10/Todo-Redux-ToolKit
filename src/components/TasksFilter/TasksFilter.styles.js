@@ -22,4 +22,11 @@ export const TaskFilterWrapper = styled.div`
     border: 1px solid #000000; 
     border-radius: 3px;
     background-color: #FFFFFF;
+
+    @media ${device.mobileS} { 
+        width: 45%;
+    }
+    @media ${device.mobileL} { 
+        width: 33%;
+    }
 `;

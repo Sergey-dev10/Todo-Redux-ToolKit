@@ -15,9 +15,20 @@ export const ButtonRemove = styled(ButtonComplite)`
 export const ButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 32%;
+    width: 30%;
 
-
+    @media ${device.mobileS} { 
+        width: 45%;
+    }
+    @media ${device.mobileM} { 
+        width: 38%;
+    }
+    @media ${device.mobileL} { 
+        width: 33%;
+    }
+    @media ${device.desktopL} { 
+        width: 22%;
+    }
 `;
 
 export const TaskWrapper = styled.div`
