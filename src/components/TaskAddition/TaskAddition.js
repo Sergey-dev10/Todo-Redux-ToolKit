@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { TaskAdditionWrapper, InputAddField, InputSubmit } from './TaskAddition.styles';
-import { addTask } from '../../actions';
+import { addTask } from '../../reducers/todoSlice';
 
 export const TaskAddition = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,11 @@ export const TaskAddition = () => {
   const onAddTask = (event) => {
     event.preventDefault();
     if (inPutValue) {
-      dispatch(addTask({ id: nanoid(), text: inPutValue }));
+      dispatch(addTask({
+        id: nanoid(),
+        isComplited: false,
+        text: inPutValue,
+      }));
       setInputValue('');
     }
   };

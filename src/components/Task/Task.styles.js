@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../common/devices';
 
 export const ButtonComplite = styled.button`
     height: 29px;
@@ -15,12 +16,15 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     width: 32%;
+
+
 `;
 
 export const TaskWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    border-bottom: 1px solid #000000;
 `;
 
 export const TextWrapper = styled.p`

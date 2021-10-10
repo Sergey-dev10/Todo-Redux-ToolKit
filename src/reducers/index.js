@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { todoReducer } from './todoReducer';
+import todoReducer from './todoSlice';
 import { filterReducer } from './filterReducer';
 import { searchReducer } from './searchReducer';
 

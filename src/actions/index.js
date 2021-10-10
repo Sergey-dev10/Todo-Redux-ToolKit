@@ -1,40 +1,20 @@
+import { createAction } from '@reduxjs/toolkit';
 import { actionTypes } from './actionTypes';
 
 const {
   ADD_TASK, COMPLITE_TASK, REMOVE_TASK, SET_FILTER, SEARCH_TASK,
 } = actionTypes;
 
-export const addTask = (task) => ({
-  type: ADD_TASK,
-  payload: task,
-});
+export const addTask = createAction(ADD_TASK);
 
-export const compliteTask = (id) => ({
-  type: COMPLITE_TASK,
-  payload: id,
-});
+export const compliteTask = createAction(COMPLITE_TASK);
 
-export const removeTask = (id) => ({
-  type: REMOVE_TASK,
-  payload: id,
-});
+export const removeTask = createAction(REMOVE_TASK);
 
-export const showAll = () => ({
-  type: SET_FILTER,
-  payload: 'SHOW_ALL',
-});
+export const showAll = createAction(SET_FILTER);
 
-export const showActive = () => ({
-  type: SET_FILTER,
-  payload: 'SHOW_ACTIVE',
-});
+export const showActive = createAction(SET_FILTER);
 
-export const showADone = () => ({
-  type: SET_FILTER,
-  payload: 'SHOW_DONE',
-});
+export const showADone = createAction(SET_FILTER);
 
-export const searchTask = (text) => ({
-  type: SEARCH_TASK,
-  payload: text,
-});
+export const searchTask = createAction(SEARCH_TASK);

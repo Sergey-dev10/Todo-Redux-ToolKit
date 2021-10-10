@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { showAll, showActive, showADone } from '../../actions';
 import {
@@ -6,6 +6,18 @@ import {
 } from './TasksFilter.styles';
 
 export const TasksFilter = ({ tasks }) => {
+  let isAllBtn; let isActiveBtn; let
+    isDoneBtn = false;
+  const activeBtn = useSelector(({ filterType }) => filterType.filterType);
+
+  if (activeBtn === 'SHOW_ALL') {
+    isAllBtn = true;
+  } else if (activeBtn === 'SHOW_ACTIVE') {
+    isActiveBtn = true;
+  } else if (activeBtn === 'SHOW_DONE') {
+    isDoneBtn = true;
+  }
+
   const dispatch = useDispatch();
   const onShowAll = () => {
     dispatch(showAll());
@@ -18,9 +30,9 @@ export const TasksFilter = ({ tasks }) => {
   };
   return (
     <TaskFilterWrapper>
-      <ButtonAll onClick={onShowAll}>All</ButtonAll>
-      <ButtonActive onClick={onShowActive}>Active</ButtonActive>
-      <ButtonDone onClick={onShowDone}>Done</ButtonDone>
+      <ButtonAll pressed={isAllBtn} onClick={onShowAll}>All</ButtonAll>
+      <ButtonActive pressed={isActiveBtn} onClick={onShowActive}>Active</ButtonActive>
+      <ButtonDone pressed={isDoneBtn} onClick={onShowDone}>Done</ButtonDone>
     </TaskFilterWrapper>
   );
 };

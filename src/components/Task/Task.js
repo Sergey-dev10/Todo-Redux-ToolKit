@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { compliteTask, removeTask } from '../../actions';
+import { compliteTask, removeTask } from '../../reducers/todoSlice';
 import {
   TaskWrapper,
   TextWrapper,

@@ -6,9 +6,10 @@ import { TaskListWrapper, SearchFilterWrapper } from './TaskList.styles';
 import { Task } from '../Task';
 import { TasksFilter } from '../TasksFilter';
 import { TaskSearch } from '../TaskSearch';
+import { selectTodo } from '../../reducers/todoSlice';
 
 export const TaskList = () => {
-  let tasks = useSelector(({ todo }) => todo.todo);
+  let tasks = useSelector(selectTodo);
   const currentFilter = useSelector(({ filterType }) => filterType.filterType);
   const searchedText = useSelector(({ search }) => search.text);
 
